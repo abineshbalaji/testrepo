@@ -24,6 +24,6 @@ jobs:
     - name: printhing the inputs we got
       run: |
         echo "Log level: ${{ github.event.inputs.logLevel }}"
-        echo "Log level: ${{ github.event.inputs.tags }}"
+        echo "Log tags: ${{ github.event.inputs.tags }}"
         
       
