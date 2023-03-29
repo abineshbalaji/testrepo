@@ -1,0 +1,29 @@
+name: Ciui-Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'log level'
+        required: true
+        default: 'warning'
+      tags:
+        description: 'test scenario tags'
+        
+        
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Say the message 
+      run: echo "hi this is the manual trigger"
+      
+    - name: printhing the inputs we got
+      run: |
+        echo "Log level: ${{ github.event.inputs.logLevel }}"
+        echo "Log level: ${{ github.event.inputs.tags }}"
+        
+      
